@@ -1,0 +1,26 @@
+{
+  "name": "vue3-spatialnavigation",
+  "version": "0.0.1",
+  "description": "Simple spatial navigation for vue3",
+  "main": "spatialnavigation.directive.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/MLangendijk/vue3-spatial-navigation.git"
+  },
+  "keywords": [
+    "vue3",
+    "spatial",
+    "navigation",
+    "focus",
+    "smarttv"
+  ],
+  "author": "Matthijs Langendijk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MLangendijk/vue3-spatial-navigation/issues"
+  },
+  "homepage": "https://github.com/MLangendijk/vue3-spatial-navigation#readme"
+}
