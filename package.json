@@ -1,6 +1,6 @@
 {
   "name": "vue3-spatialnavigation",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple spatial navigation for vue3",
   "main": "spatialnavigation.directive.js",
   "scripts": {

@@ -47,6 +47,8 @@ export class NavigationService {
 
             // action spatial navigation
             if (keyName in NavigationServiceDirection) this.spatialNavigationAction(keyName);
+
+            e.preventDefault();
         }));
     }
 
