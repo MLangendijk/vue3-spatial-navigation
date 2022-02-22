@@ -1,3 +1,9 @@
+[![Version][npm-version-img]][npm] [![Downloads][npm-downloads-img]][npm]
+
+[npm]: https://www.npmjs.com/package/vue3-spatialnavigation
+[npm-downloads-img]: https://img.shields.io/npm/dm/vue3-spatialnavigation.svg
+[npm-version-img]: https://img.shields.io/npm/v/vue3-spatialnavigation.svg
+
 # Introduction
 This is a Vue3 Javascript-only adaptation of the Vue2 Spatial Navigation directive from https://github.com/twcapps/vue-spatialnavigation
 
