@@ -289,8 +289,8 @@ export default {
                 }
             },
             beforeUnmount: (el, binding, vnode) => {
-                if (vnode.elm) {
-                    let focusElement = navigationService.getFocusElementById((vnode.elm).id);
+                if (el.id) {
+                    let focusElement = navigationService.getFocusElementById(el.id);
                     if (focusElement) navigationService.deRegisterFocusElement(focusElement);
                 }
             }
