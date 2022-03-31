@@ -149,7 +149,7 @@ export class FocusElement {
 
     //// spatial navigation
     // move focus to the element/action configured as 'left' from this element
-    left() {
+    left(event) {
         // check if we should automatically find next focusable element
         if (this._left === FocusElement.AutoFocus) {
             this.defaultFocusPrevious();
@@ -160,14 +160,14 @@ export class FocusElement {
         // check if a event method is binded to the component
         if (this._listeners.left && isFunction(this.props.onLeft)) {
             try {
-                this.props.onLeft();
+                this.props.onLeft(event);
             } catch (e) {
             }
         }
     }
 
     // move focus to the element/action configured as 'right' from this element
-    right() {
+    right(event) {
         // check if we should automatically find next focusable element
         if (this._right === FocusElement.AutoFocus) {
             this.defaultFocusNext();
@@ -178,14 +178,14 @@ export class FocusElement {
         // check if a event method is binded to the component
         if (this._listeners.right && isFunction(this.props.onRight)) {
             try {
-                this.props.onRight();
+                this.props.onRight(event);
             } catch (e) {
             }
         }
     }
 
     // move focus to the element/action configured as 'up' from this element
-    up() {
+    up(event) {
         // check if we should automatically find next focusable element
         if (this._up === FocusElement.AutoFocus) {
             this.defaultFocusPrevious();
@@ -196,14 +196,14 @@ export class FocusElement {
         // check if a event method is binded to the component
         if (this._listeners.up && isFunction(this.props.onUp)) {
             try {
-                this.props.onUp();
+                this.props.onUp(event);
             } catch (e) {
             }
         }
     }
 
     // move focus to the element/action configured as 'down' from this element
-    down() {
+    down(event) {
         // check if we should automatically find next focusable element
         if (this._down === FocusElement.AutoFocus) {
             this.defaultFocusNext();
@@ -214,7 +214,7 @@ export class FocusElement {
         // check if an event method is bound to the component
         if (this._listeners.down && isFunction(this.props.onDown)) {
             try {
-                this.props.onDown();
+                this.props.onDown(event);
             } catch (e) {
             }
         }

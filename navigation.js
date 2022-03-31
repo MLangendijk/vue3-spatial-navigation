@@ -96,16 +96,16 @@ export class NavigationService {
         if (el) {
             switch (keyValue) {
                 case NavigationServiceDirection.Up:
-                    el.up();
+                    el.up(e);
                     break;
                 case NavigationServiceDirection.Down:
-                    el.down();
+                    el.down(e);
                     break;
                 case NavigationServiceDirection.Left:
-                    el.left();
+                    el.left(e);
                     break;
                 case NavigationServiceDirection.Right:
-                    el.right();
+                    el.right(e);
                     break;
                 case NavigationServiceDirection.Enter:
                     el.enter(e);

@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.0.5]
+### Additions
+* Exposed DOM event to all focus and navigation event handlers.
+
 ## [0.0.4]
 ### Additions
 * Added function check for all event handlers.
