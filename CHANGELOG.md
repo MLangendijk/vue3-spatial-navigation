@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.0.4]
+### Additions
+* Added function check for all event handlers.
+
+### Fixes
+* Fixed duplicate @click event being triggered on mouseclick.
+* Fixed DOM event not being sent to @click handler.
+* Fixed some typos in code.
+
 ## [0.0.3]
 ### Fixes
 * Fixed deregistering of focusable elements.

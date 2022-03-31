@@ -1,4 +1,5 @@
 import {NavigationService} from "./navigation.js";
+import { isFunction } from "./utils";
 
 // export navigation service
 export let navigationService;
@@ -54,7 +55,7 @@ export class FocusElement {
             this._down = (props['data-down'] || props['onDown'] ||"");
 
             // do not cache the listener logic to prevent memory leaks
-            // instead cache the existance of a specific listener in the directive
+            // instead cache the existence of a specific listener in the directive
             this._listeners = {
                 focus: !!(props['data-focus'] || props['onFocus']),
                 blur: !!(props['data-blur'] || props['onBlur']),
@@ -107,7 +108,7 @@ export class FocusElement {
         this.isFocus = true;
         if (this.$el) {
             this.$el.className += " focus";
-            if (this._listeners.focus) {
+            if (this._listeners.focus && isFunction(this.props.onFocus)) {
                 try {
                     this.props.onFocus();
                 } catch (e) {
@@ -157,7 +158,7 @@ export class FocusElement {
             this.doFocusElement(this._left);
         }
         // check if a event method is binded to the component
-        if (this._listeners.left) {
+        if (this._listeners.left && isFunction(this.props.onLeft)) {
             try {
                 this.props.onLeft();
             } catch (e) {
@@ -175,7 +176,7 @@ export class FocusElement {
             this.doFocusElement(this._right);
         }
         // check if a event method is binded to the component
-        if (this._listeners.right) {
+        if (this._listeners.right && isFunction(this.props.onRight)) {
             try {
                 this.props.onRight();
             } catch (e) {
@@ -193,7 +194,7 @@ export class FocusElement {
             this.doFocusElement(this._up);
         }
         // check if a event method is binded to the component
-        if (this._listeners.up) {
+        if (this._listeners.up && isFunction(this.props.onUp)) {
             try {
                 this.props.onUp();
             } catch (e) {
@@ -210,8 +211,8 @@ export class FocusElement {
         } else if (this._down) {
             this.doFocusElement(this._down);
         }
-        // check if a event method is binded to the component
-        if (this._listeners.down) {
+        // check if an event method is bound to the component
+        if (this._listeners.down && isFunction(this.props.onDown)) {
             try {
                 this.props.onDown();
             } catch (e) {
@@ -219,10 +220,10 @@ export class FocusElement {
         }
     }
 
-    enter() {
-        if (this._listeners.click) {
+    enter(event) {
+        if (this._listeners.click && isFunction(this.props.onClick)) {
             try {
-                this.props.onClick();
+                this.props.onClick(event);
             } catch (e) {
             }
         }

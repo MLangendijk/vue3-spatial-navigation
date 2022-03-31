@@ -46,7 +46,7 @@ export class NavigationService {
             if (this.blockAllSpatialNavigation) return false;
 
             // action spatial navigation
-            if (keyName in NavigationServiceDirection) this.spatialNavigationAction(keyName);
+            if (keyName in NavigationServiceDirection) this.spatialNavigationAction(keyName, e);
 
             e.preventDefault();
         }));
@@ -68,15 +68,6 @@ export class NavigationService {
             let el = this.findFocusable(e.target);
             if (el) el.blur();
         });
-
-
-        // enable click event
-        document.addEventListener("click", (e) => {
-            if (this.blockAllSpatialNavigation) return false;
-            let el = this.findFocusable(e.target);
-            if (el) el.enter();
-        });
-
     }
 
     // try to find focusable element on mouse hover or click
@@ -96,7 +87,7 @@ export class NavigationService {
     }
 
     // action a new spatial navigation action
-    spatialNavigationAction(action) {
+    spatialNavigationAction(action, e) {
         let el = this.getFocusElementInFocus();
 
         let keyValue = NavigationServiceDirection[action];
@@ -117,7 +108,7 @@ export class NavigationService {
                     el.right();
                     break;
                 case NavigationServiceDirection.Enter:
-                    el.enter();
+                    el.enter(e);
                     break;
             }
 
