@@ -43,7 +43,11 @@ export class NavigationService {
             if (!keyName) return false;
 
             // spatial navigation is blocked
-            if (this.blockAllSpatialNavigation) return false;
+            if (this.blockAllSpatialNavigation) {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            }
 
             // action spatial navigation
             if (keyName in NavigationServiceDirection) this.spatialNavigationAction(keyName, e);
@@ -55,7 +59,11 @@ export class NavigationService {
     setupMouseEvents() {
         // enable mouseover event
         document.addEventListener("mouseover", (e) => {
-            if (this.blockAllSpatialNavigation) return false;
+            if (this.blockAllSpatialNavigation) {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            }
 
             let el = this.findFocusable(e.target);
             if (el) el.focus();
@@ -63,7 +71,11 @@ export class NavigationService {
 
         // enable mouseout event
         document.addEventListener("mouseout", (e) => {
-            if (this.blockAllSpatialNavigation) return false;
+            if (this.blockAllSpatialNavigation) {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            }
 
             let el = this.findFocusable(e.target);
             if (el) el.blur();

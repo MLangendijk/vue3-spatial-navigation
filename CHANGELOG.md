@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.0.6]
+### Fixes
+* Fix keydown handlers still executing when navigation is blocked.
+
 ## [0.0.5]
 ### Additions
 * Exposed DOM event to all focus and navigation event handlers.
