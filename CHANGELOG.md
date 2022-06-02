@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.0.7]
+### Fixes
+* Fixed focusable element being searched for function action.
+
 ## [0.0.6]
 ### Fixes
 * Fix keydown handlers still executing when navigation is blocked.

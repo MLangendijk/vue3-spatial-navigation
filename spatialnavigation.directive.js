@@ -154,7 +154,7 @@ export class FocusElement {
         if (this._left === FocusElement.AutoFocus) {
             this.defaultFocusPrevious();
             // check if next focusable element should be set based on a DOM id pointer
-        } else if (this._left) {
+        } else if (this._left && !isFunction(this._left)) {
             this.doFocusElement(this._left);
         }
         // check if a event method is binded to the component
@@ -172,7 +172,7 @@ export class FocusElement {
         if (this._right === FocusElement.AutoFocus) {
             this.defaultFocusNext();
             // check if next focusable element should be set based on a DOM id pointer
-        } else if (this._right) {
+        } else if (this._right && !isFunction(this._right)) {
             this.doFocusElement(this._right);
         }
         // check if a event method is binded to the component
@@ -190,7 +190,7 @@ export class FocusElement {
         if (this._up === FocusElement.AutoFocus) {
             this.defaultFocusPrevious();
             // check if next focusable element should be set based on a DOM id pointer
-        } else if (this._up) {
+        } else if (this._up && !isFunction(this._up)) {
             this.doFocusElement(this._up);
         }
         // check if a event method is binded to the component
@@ -208,7 +208,7 @@ export class FocusElement {
         if (this._down === FocusElement.AutoFocus) {
             this.defaultFocusNext();
             // check if next focusable element should be set based on a DOM id pointer
-        } else if (this._down) {
+        } else if (this._down && !isFunction(this._down)) {
             this.doFocusElement(this._down);
         }
         // check if an event method is bound to the component
