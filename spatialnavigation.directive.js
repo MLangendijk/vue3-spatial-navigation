@@ -116,7 +116,7 @@ export class FocusElement {
             }
         }
         // set 'native' browser focus on input elements and focusable elements.
-        if (this.$el && (this.$el.tabIndex !== -1 || this.$el.nodeName === "INPUT" || this.$el.nodeName === "TEXTAREA")) this.$el.focus();
+        if (this.$el && (this.$el.tabIndex !== -1 || this.$el.nodeName === "INPUT" || this.$el.nodeName === "TEXTAREA")) this.$el.focus({ preventScroll: true });
     }
 
     // remove focus from element

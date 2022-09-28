@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.0.8]
+### Changes
+* Prevent automatic scroll on DOM focus.
+
 ## [0.0.7]
 ### Fixes
 * Fixed focusable element being searched for function action.
