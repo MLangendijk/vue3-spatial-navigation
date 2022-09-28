@@ -108,15 +108,23 @@ export class FocusElement {
         this.isFocus = true;
         if (this.$el) {
             this.$el.className += " focus";
-            if (this._listeners.focus && isFunction(this.props.onFocus)) {
-                try {
-                    this.props.onFocus();
-                } catch (e) {
+
+
+            if (this.$el.tabIndex !== -1 || this.$el.nodeName === "INPUT" || this.$el.nodeName === "TEXTAREA") {
+
+                // set 'native' browser focus on input elements and focusable elements.
+                this.$el.focus({ preventScroll: true });
+            } else {
+
+                // If regular focus event is not triggereable, manually call the focus listener.
+                if (this._listeners.focus && isFunction(this.props.onFocus)) {
+                    try {
+                        this.props.onFocus();
+                    } catch (e) {
+                    }
                 }
             }
         }
-        // set 'native' browser focus on input elements and focusable elements.
-        if (this.$el && (this.$el.tabIndex !== -1 || this.$el.nodeName === "INPUT" || this.$el.nodeName === "TEXTAREA")) this.$el.focus({ preventScroll: true });
     }
 
     // remove focus from element

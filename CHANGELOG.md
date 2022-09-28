@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.0.9]
+### Changes
+* Only manually trigger focus listener when dom event cannot be triggered.
+
 ## [0.0.8]
 ### Changes
 * Prevent automatic scroll on DOM focus.
